@@ -2,11 +2,16 @@
 using CustomShell.Handlers;
 
 namespace CustomShell.Commands;
-
+/// <summary>
+/// Name: Help
+/// Command: help [?command]
+/// Description: This command get's information about each command for it's usage.
+/// </summary>
 public class Help : ICommand
 {
 #region Command: Info
 
+	public string Group { get; } = "built-in";
 	public string Name { get; } = "Help";
 	public string Command { get; } = "help";
 

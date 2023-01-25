@@ -1,11 +1,16 @@
 ﻿using CustomShell.API.Features;
 
 namespace CustomShell.Commands;
-
+/// <summary>
+/// Name: Clear
+/// Command: cls
+/// Description: Will clear the screen.
+/// </summary>
 public class Clear : ICommand
 {
 #region Command: Info
 
+	public string Group { get; } = "built-in";
 	public string Name { get; } = "Clear";
 	public string Command { get; } = "cls";
 	public string Description { get; } = "Clears the console";

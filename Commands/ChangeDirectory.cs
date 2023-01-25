@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using CustomShell.API.Features;
+﻿using CustomShell.API.Features;
 using CustomShell.Handlers;
-using Spectre.Console;
 
 namespace CustomShell.Commands;
-
+/// <summary>
+/// Name: Change Directory
+/// Command: cd [? | path | -]
+/// Description: Changes the current working directory
+/// </summary>
 public class ChangeDirectory : ICommand
 {
 #region Command: Info
 
+	public string Group { get; } = "built-in";
 	public string Name { get; } = "Change Directory";
 	public string Command { get; } = "cd";
 	public string Description { get; } = "Changes the current working directory";

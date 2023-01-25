@@ -7,9 +7,20 @@
 /// </summary>
 public interface ICommandExtHelp
 {
+	#region Command: Info
+
+	/// <summary>
+	/// The command. 
+	/// </summary>
+	/// <returns></returns>
+	[Description("The Actual Command")] string Command { get; }
+
+	#endregion
 #region Command: Method
 
-	[Description("The Actual Command")] string Command { get; }
+	/// <summary>
+	/// Put all the info inside this.
+	/// </summary>
 	[Description("The method to add the info into")]
 	void CustomHelp();
 
