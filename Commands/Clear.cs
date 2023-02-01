@@ -14,7 +14,7 @@ public class Clear : ICommand
 	public string Name { get; } = "Clear";
 	public string Command { get; } = "cls";
 	public string Description { get; } = "Clears the console";
-	public Dictionary<int, ICommandArguments> Arguments { get; } = new Dictionary<int, ICommandArguments>();
+	public List<ICommandArguments> Arguments { get; } = new List<ICommandArguments>();
 	public bool IsSudo { get; } = false;
 	public string Example { get; } = "cls";
 	public bool HasCustomHelp { get; } = false;

@@ -1,4 +1,5 @@
 ﻿using CustomShell.API.Features;
+using CustomShell.API.Features.Parser;
 using CustomShell.Handlers;
 
 namespace CustomShell.Commands;
@@ -16,12 +17,9 @@ public class ChangeDirectory : ICommand
 	public string Command { get; } = "cd";
 	public string Description { get; } = "Changes the current working directory";
 
-	public Dictionary<int, ICommandArguments> Arguments { get; } = new Dictionary<int, ICommandArguments>()
+	public List<ICommandArguments> Arguments { get; } = new List<ICommandArguments>()
 	{
-		{
-			1,
-			new ICommandArguments("Path", "The path to go to", false)
-		}
+		new ICommandArguments("Path", CommandOptionType.Symbol, "The path to go to", false)
 	};
 
 	public bool IsSudo { get; } = false;

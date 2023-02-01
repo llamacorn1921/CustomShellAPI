@@ -1,4 +1,5 @@
 ﻿using CustomShell.API.Features;
+using CustomShell.API.Features.Parser;
 using CustomShell.Handlers;
 
 namespace CustomShell.Commands;
@@ -18,12 +19,9 @@ public class Help : ICommand
 	public string Description { get; } =
 		"The Help command. This command is used to give insight on each existing command.";
 
-	public Dictionary<int, ICommandArguments> Arguments { get; } = new Dictionary<int, ICommandArguments>()
+	public List<ICommandArguments> Arguments { get; } = new List<ICommandArguments>()
 	{
-		{
-			1,
-			new ICommandArguments("command", "The command to get information about", false)
-		}
+		new ICommandArguments("Command", CommandOptionType.Symbol, "The command to get help for", false)
 	};
 
 	public bool IsSudo { get; } = false;
@@ -41,11 +39,6 @@ public class Help : ICommand
 
 	public void Execute(string[] arguments)
 	{
-		if (IO.IsDebug)
-		{
-			AnsiConsole.MarkupLineInterpolated($"[yellow]{string.Join(" | ", arguments)}[/]");
-		}
-
 		if (Shell.Commands.ContainsKey(arguments.First()))
 		{
 			ICommand command = Shell.Commands[arguments.First()];

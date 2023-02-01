@@ -14,7 +14,7 @@ public class ExtendedHelpExample : ICommand, ICommandExtHelp
 	public string Name { get; } = "Extended Help Example";
 	public string Command { get; } = "ext-help";
 	public string Description { get; } = "Example for extended Help";
-	public Dictionary<int, ICommandArguments> Arguments { get; } = new Dictionary<int, ICommandArguments>();
+	public List<ICommandArguments> Arguments { get; } = new List<ICommandArguments>();
 	public bool IsSudo { get; } = false;
 	public string Example { get; } = "ext-help";
 	public bool HasCustomHelp { get; } = true;
