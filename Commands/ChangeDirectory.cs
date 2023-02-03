@@ -3,10 +3,11 @@ using CustomShell.API.Features.Parser;
 using CustomShell.Handlers;
 
 namespace CustomShell.Commands;
+
 /// <summary>
-/// Name: Change Directory
-/// Command: cd [? | path | -]
-/// Description: Changes the current working directory
+///     Name: Change Directory
+///     Command: cd [? | path | -]
+///     Description: Changes the current working directory
 /// </summary>
 public class ChangeDirectory : ICommand
 {
@@ -17,9 +18,9 @@ public class ChangeDirectory : ICommand
 	public string Command { get; } = "cd";
 	public string Description { get; } = "Changes the current working directory";
 
-	public List<ICommandArguments> Arguments { get; } = new List<ICommandArguments>()
+	public List<ICommandArguments> Arguments { get; } = new()
 	{
-		new ICommandArguments("Path", CommandOptionType.Symbol, "The path to go to", false)
+		new("Path", CommandOptionType.Symbol, "The path to go to", false)
 	};
 
 	public bool IsSudo { get; } = false;
@@ -37,7 +38,6 @@ public class ChangeDirectory : ICommand
 
 	public void Execute(string[] arguments)
 	{
-
 		if (arguments.Length == 0)
 		{
 			Shell.ChangeDirectory(Shell.DefaultDirectory);
@@ -52,5 +52,4 @@ public class ChangeDirectory : ICommand
 	}
 
 #endregion
-
 }

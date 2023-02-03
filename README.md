@@ -1,21 +1,27 @@
 # CustomShell-API
+
 ## This is an API Framework for the CustomShell I made to allow the user to create commands
+
 ## The api uses C# for the language, Version 10.0
 
- \
- \
- \
- .
+\
+\
+\
+.
+
 # Table of Contents
+
 1. [How to use](#How-to-use)
 2. [Code Structure](#codestructure)
 
-
-
 # How to use
+
 <a name="codestructure"></a>
+
 ## Code Structure
+
 The code structure of the commands looks like this
+
 ```csharp
 using CustomShell.API.Features;
 
@@ -51,9 +57,11 @@ public class Name : ICommand
 #endregion
 }
 ```
-The `Load` method is called when the command is loaded at start up. This is for anything that needs to be done before the command can be used. It shall return `true` if loading was complete or `false` if loading failed. /
-The `Execute` method is called when the command is called. The `arguments` paramater is anything the user will enter, excluding the actaul command call.
 
+The `Load` method is called when the command is loaded at start up. This is for anything that needs to be done before
+the command can be used. It shall return `true` if loading was complete or `false` if loading failed. /
+The `Execute` method is called when the command is called. The `arguments` paramater is anything the user will enter,
+excluding the actaul command call.
 
 \
 \

@@ -1,12 +1,13 @@
 ﻿using CustomShell.API.Features;
 
 namespace CustomShell.Commands;
+
 /// <summary>
-/// Name: Extended Help Example
-/// Command: ext-help
-/// Description: This command is an example of how <see cref="ICommandExtHelp"> works
+///     Name: Extended Help Example
+///     Command: ext-help
+///     Description: This command is an example of how <see cref="ICommandExtHelp"> works
 /// </summary>
-public class ExtendedHelpExample : ICommand, ICommandExtHelp
+public class ExtendedHelpExample : ICommandExtHelp
 {
 #region Command: Info
 
@@ -14,7 +15,7 @@ public class ExtendedHelpExample : ICommand, ICommandExtHelp
 	public string Name { get; } = "Extended Help Example";
 	public string Command { get; } = "ext-help";
 	public string Description { get; } = "Example for extended Help";
-	public List<ICommandArguments> Arguments { get; } = new List<ICommandArguments>();
+	public List<ICommandArguments> Arguments { get; } = new();
 	public bool IsSudo { get; } = false;
 	public string Example { get; } = "ext-help";
 	public bool HasCustomHelp { get; } = true;
@@ -39,5 +40,4 @@ public class ExtendedHelpExample : ICommand, ICommandExtHelp
 	}
 
 #endregion
-
 }

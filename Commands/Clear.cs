@@ -1,10 +1,11 @@
 ﻿using CustomShell.API.Features;
 
 namespace CustomShell.Commands;
+
 /// <summary>
-/// Name: Clear
-/// Command: cls
-/// Description: Will clear the screen.
+///     Name: Clear
+///     Command: cls
+///     Description: Will clear the screen.
 /// </summary>
 public class Clear : ICommand
 {
@@ -14,7 +15,7 @@ public class Clear : ICommand
 	public string Name { get; } = "Clear";
 	public string Command { get; } = "cls";
 	public string Description { get; } = "Clears the console";
-	public List<ICommandArguments> Arguments { get; } = new List<ICommandArguments>();
+	public List<ICommandArguments> Arguments { get; } = new();
 	public bool IsSudo { get; } = false;
 	public string Example { get; } = "cls";
 	public bool HasCustomHelp { get; } = false;
@@ -34,5 +35,4 @@ public class Clear : ICommand
 	}
 
 #endregion
-
 }

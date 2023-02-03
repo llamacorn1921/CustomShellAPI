@@ -6,12 +6,12 @@
 public static class CommandUtils
 {
 	/// <summary>
-	/// Gets the amount of required arguments given the arguments dictionary
+	///     Gets the amount of required arguments given the arguments dictionary
 	/// </summary>
-	/// <param name="commandArguments">The commands arguments</param>
-	/// <returns>Count of required arguments</returns>
-	public static int GetRequiredArgsInt(Dictionary<int, ICommandArguments> commandArguments)
+	/// <param name="commandArguments"> The commands arguments </param>
+	/// <returns> Count of required arguments </returns>
+	public static int GetRequiredArgsInt(List<ICommandArguments> commandArguments)
 	{
-		return commandArguments.Count(x => x.Value.IsRequired);
+		return commandArguments.Count(x => x.IsRequired);
 	}
 }

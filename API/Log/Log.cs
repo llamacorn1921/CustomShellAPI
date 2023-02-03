@@ -1,6 +1,9 @@
 ﻿namespace CustomShell.API.Log;
 
-public class Log
+/// <summary>
+///     Log some shit.
+/// </summary>
+public static class Log
 {
-	
+	// log stuff. Come back in the future.
 }
